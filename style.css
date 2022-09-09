@@ -58,7 +58,7 @@ body {
   flex-direction: column;
   padding: 10px;
   word-wrap: break-word;
-  word-break: break all;
+  word-break: break-all;
 }
 
 .output .previous-operand {
