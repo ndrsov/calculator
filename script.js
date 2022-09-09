@@ -9,7 +9,9 @@ class Calculator {
     this.previousOperand = "";
     this.operation = undefined;
   }
-  delete() {}
+  delete() {
+    this.currentOperand = this.currentOperand.toString().slice(0, -1);
+  }
   appendNumber(number) {
     if (number === "." && this.currentOperand.includes(".")) return;
 
@@ -49,9 +51,33 @@ class Calculator {
     this.operation = undefined;
     this.previousOperand = "";
   }
+  getDisplayNumber(number) {
+    const stringNumber = number.toString();
+    const integerDigits = parseFloat(stringNumber.split(".")[0]);
+    const decimalDigits = stringNumber.split(".")[1];
+    let integerDisplay;
+    if (isNaN(integerDigits)) {
+      integerDisplay = "";
+    } else {
+      integerDisplay = integerDigits.toLocaleString("en", {
+        maximumFractionDigits: 0,
+      });
+    }
+    if (decimalDigits != null) {
+      return `${integerDisplay}.${decimalDigits}`;
+    } else {
+      return integerDisplay;
+    }
+  }
   updateDisplay() {
-    this.currenTxtEl.innerText = this.currentOperand;
-    this.previousTxtEl.innerText = this.previousOperand;
+    this.currenTxtEl.innerText = this.getDisplayNumber(this.currentOperand);
+    if (this.operation != null) {
+      this.previousTxtEl.innerText = `${this.getDisplayNumber(
+        this.previousOperand
+      )} ${this.operation}`;
+    } else {
+      this.previousTxtEl.innerText = "";
+    }
   }
 }
 
