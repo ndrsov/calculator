@@ -42,6 +42,11 @@ class Calculator {
         computation = prev * current;
         break;
       case "÷":
+        if (current === 0) {
+          alert("YOU CANNOT DIVIDE BY ZERO");
+          computation = 0;
+          return;
+        }
         computation = prev / current;
         break;
       default:
