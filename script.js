@@ -123,3 +123,58 @@ deleteBtn.addEventListener("click", () => {
   calculator.delete();
   calculator.updateDisplay();
 });
+//Keyboard Support added
+window.addEventListener("keydown", (e) => {
+  if (e.code === "Numpad0" || e.code === "Digit0") {
+    calculator.appendNumber("0");
+    calculator.updateDisplay();
+  } else if (e.code === "Numpad1" || e.code === "Digit1") {
+    calculator.appendNumber("1");
+    calculator.updateDisplay();
+  } else if (e.code === "Numpad2" || e.code === "Digit2") {
+    calculator.appendNumber("2");
+    calculator.updateDisplay();
+  } else if (e.code === "Numpad3" || e.code === "Digit3") {
+    calculator.appendNumber("3");
+    calculator.updateDisplay();
+  } else if (e.code === "Numpad4" || e.code === "Digit4") {
+    calculator.appendNumber("4");
+    calculator.updateDisplay();
+  } else if (e.code === "Numpad5" || e.code === "Digit5") {
+    calculator.appendNumber("5");
+    calculator.updateDisplay();
+  } else if (e.code === "Numpad6" || e.code === "Digit6") {
+    calculator.appendNumber("6");
+    calculator.updateDisplay();
+  } else if (e.code === "Numpad7" || e.code === "Digit7") {
+    calculator.appendNumber("7");
+    calculator.updateDisplay();
+  } else if (e.code === "Numpad8" || e.code === "Digit8") {
+    calculator.appendNumber("8");
+    calculator.updateDisplay();
+  } else if (e.code === "Numpad9" || e.code === "Digit9") {
+    calculator.appendNumber("9");
+    calculator.updateDisplay();
+  } else if (e.code === "NumpadDecimal" || e.code === "Period") {
+    calculator.appendNumber(".");
+    calculator.updateDisplay();
+  } else if (e.code === "NumpadAdd" || e.code === "Equal") {
+    calculator.chooseOperation("+");
+    calculator.updateDisplay();
+  } else if (e.code === "NumpadSubtract" || e.code === "Minus") {
+    calculator.chooseOperation("-");
+    calculator.updateDisplay();
+  } else if (e.code === "NumpadMultiply" || e.code === "KeyX") {
+    calculator.chooseOperation("x");
+    calculator.updateDisplay();
+  } else if (e.code === "NumpadDivide" || e.code === "Slash") {
+    calculator.chooseOperation("+");
+    calculator.updateDisplay();
+  } else if (e.code === "Backspace") {
+    calculator.delete();
+    calculator.updateDisplay();
+  } else if (e.code === "Enter") {
+    calculator.compute();
+    calculator.updateDisplay();
+  }
+});
