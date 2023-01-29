@@ -79,3 +79,23 @@ body {
   color: var(--white);
   font-size: 2.5rem;
 }
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--jet);
+  color: var(--gainsboro);
+  text-align: center;
+  padding: 1rem;
+  letter-spacing: 1.5px;
+}
+
+.attribution a {
+  color: white;
+  text-decoration: none;
+}
+.attribution a:hover,
+.attribution a:active {
+  color: var(--ming);
+}
